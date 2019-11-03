@@ -31,10 +31,27 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  data () {
+    return {
+      listArray: []
+    }
+  },
+  created () {
+    this.getData()
+  },
+  methods:{
+    getData() {
+      axios.get('https://randomuser.me/api/?results=100')
+        .then(data=> {
+          this.listArray = data.data.results
+        })
+    }
   }
 }
 </script>
