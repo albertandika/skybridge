@@ -16,7 +16,7 @@ export const store = new Vuex.Store({
    changeSort(state, sort) {
        state.sortList = sort
    },
-   arrayList(state, data) {
+   changeArrayList(state, data) {
        state.arrayList = data
    }
   },
